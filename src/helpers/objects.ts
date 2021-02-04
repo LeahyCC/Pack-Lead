@@ -1,20 +1,16 @@
-const isEmptyObj = (obj: {}) => {
-  // during api transit an obj may come null or undefined
-  // to avoid nested null checks in app
-  // assing proper types from root of the data (api > redux > components)
-  const notUndefined = obj !== null || obj !== undefined
+import isTypeObj from './types'
 
+const isEmptyObj = (obj: {}) => {
   // truthiness if is type {}
-  const isTypeObj = Object.keys(obj).length === 0 && obj.constructor === Object
+  const isEmpty = obj && Object.keys(obj).length === 0
 
   // if hits console.ware, feelsbadman
-  const objCheck = notUndefined
-    ? isTypeObj
+  return isEmpty
+    ? isTypeObj(obj)
     : // eslint-disable-next-line no-console
       console.warn(
-        `isEmptyObj({}: obj): is being passed a null or undefined {} type`
+        `isEmptyObj({}: obj): is being passed a null or undefined {} type; likely from api data`
       )
-  return objCheck
 }
 
 // TODO:
