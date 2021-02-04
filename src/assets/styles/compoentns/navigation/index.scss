@@ -1,0 +1,45 @@
+.nav {
+  &__w {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    max-width: 50px;
+    width: 100%;
+    background-color: #233034;
+  }
+
+  &__logo {
+    @include flex-center;
+    padding: 8px 0;
+    margin-bottom: 10px;
+    background-color: #00bfff;
+    color: white;
+
+    > * {
+      max-width: 35px;
+    }
+  }
+
+  &__item {
+    @include flex-center;
+    padding: 10px 0;
+    width: 100%;
+
+    &--active {
+      .nav__item-icon {
+        color: #00bfff;
+      }
+    }
+
+    &-icon {
+      max-width: 30px;
+      color: white;
+      transition: color 300ms;
+    }
+
+    &-title {
+      display: none;
+    }
+  }
+}

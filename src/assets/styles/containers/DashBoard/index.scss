@@ -1,0 +1,21 @@
+.dash {
+  &__w {
+    h1 {
+      font-size: 21px;
+    }
+  }
+}
+
+.dash-task {
+  &__w {
+    display: flex;
+    box-shadow: inset 7px 0px 0px 0px blue;
+    background-color: #f5f6f8;
+    padding: 12px;
+    margin-bottom: 3px;
+  }
+
+  &__title {
+    font-size: 18px;
+  }
+}
