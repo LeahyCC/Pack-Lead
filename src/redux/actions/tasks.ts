@@ -2,7 +2,7 @@ export const FETCH_TASKS: string = 'FETCH_TASKS'
 
 // MOCK DATA
 // eslint-disable-next-line import/first
-import taskMockData from './MOCKDATA'
+import { taskMockData } from './MOCKDATA'
 
 const getTasks = () => (dispatch: any) => {
   dispatch({

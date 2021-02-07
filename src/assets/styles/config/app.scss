@@ -1,10 +1,4 @@
-// @use "sass:meta";
 $font-family: 'Roboto';
-// TODO - meta.inspect
-// .app {
-//   --font-family-sans-serif: #{meta.inspect($font-family-sans-serif)};
-//   --font-family-monospace: #{meta.inspect($font-family-monospace)};
-// }
 
 * {
   font-family: $font-family !important;
@@ -23,8 +17,7 @@ $font-family: 'Roboto';
     padding: 15px;
   }
 
-  &__body {
-    height: 900px;
-    border: 1px solid red;
-  }
+  // &__body {
+  //   background-color: rgb(247, 249, 252);
+  // }
 }

@@ -8,9 +8,7 @@ const isEmptyObj = (obj: {}) => {
   return isEmpty
     ? isTypeObj(obj)
     : // eslint-disable-next-line no-console
-      console.warn(
-        `isEmptyObj({}: obj): is being passed a null or undefined {} type; likely from api data`
-      )
+      console.warn(`isEmptyObj({}: obj): is being passed ${obj}`)
 }
 
 // TODO:

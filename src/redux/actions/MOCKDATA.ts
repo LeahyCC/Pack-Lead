@@ -1,7 +1,8 @@
 import faker from 'faker'
 import { taskObj } from '../../objects/tasks'
+import { teamObj } from '../../objects/team'
 
-const taskMockData: taskObj[] = [
+export const taskMockData: taskObj[] = [
   {
     id: faker.random.number(),
     title: faker.lorem.words(5),
@@ -24,4 +25,23 @@ const taskMockData: taskObj[] = [
   }
 ]
 
-export default taskMockData
+export const teamMockData: teamObj[] = [
+  {
+    profileImage: null,
+    firstName: 'Adrian',
+    lastName: '',
+    role: 'FE'
+  },
+  {
+    profileImage: null,
+    firstName: 'Max',
+    lastName: '',
+    role: 'FE'
+  },
+  {
+    profileImage: null,
+    firstName: 'Dan',
+    lastName: '',
+    role: 'BE'
+  }
+]

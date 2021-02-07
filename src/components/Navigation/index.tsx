@@ -1,12 +1,8 @@
-// TODO:
-// allow no-underscore-dangle; for decleration that it's private
-// _navItems can be change back to non private as it's all fe anyways
-/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react'
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 
 import { FaHome } from 'react-icons/fa'
-import { GoChecklist } from 'react-icons/go'
+import { GoChecklist, GoOrganization } from 'react-icons/go'
 import { BiBomb } from 'react-icons/bi'
 
 interface navItemInt {
@@ -17,7 +13,7 @@ interface navItemInt {
 type navItem = navItemInt[]
 
 export class Navigation extends Component<RouteComponentProps> {
-  _navItems = () => {
+  navItems = () => {
     const { location } = this.props
     const iconSize = '100%'
     const itemList: navItem = [
@@ -29,7 +25,12 @@ export class Navigation extends Component<RouteComponentProps> {
       {
         to: '/tasks',
         icon: <GoChecklist size={iconSize} />,
-        title: 'Shopping List'
+        title: 'Tasks'
+      },
+      {
+        to: '/team',
+        icon: <GoOrganization size={iconSize} />,
+        title: 'Team'
       }
     ]
 
@@ -55,7 +56,7 @@ export class Navigation extends Component<RouteComponentProps> {
         <div className='nav__logo'>
           <BiBomb size='100%' />
         </div>
-        <ul>{this._navItems()}</ul>
+        <ul>{this.navItems()}</ul>
       </nav>
     )
   }
