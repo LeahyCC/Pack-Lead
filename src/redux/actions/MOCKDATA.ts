@@ -29,19 +29,25 @@ export const teamMockData: teamObj[] = [
   {
     profileImage: null,
     firstName: 'Adrian',
-    lastName: '',
+    lastName: 'Luc',
     role: 'FE'
   },
   {
     profileImage: null,
     firstName: 'Max',
-    lastName: '',
+    lastName: 'Gaylik',
     role: 'FE'
   },
   {
     profileImage: null,
     firstName: 'Dan',
-    lastName: '',
+    lastName: 'Tootoe',
     role: 'BE'
+  },
+  {
+    profileImage: null,
+    firstName: 'Colin',
+    lastName: 'Leahy',
+    role: 'TechLead'
   }
 ]

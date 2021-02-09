@@ -1,36 +1,43 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import getTeam from '../../redux/actions/team'
+import teamRole from './teamRole'
 import { teamObj } from '../../objects/team'
 
 interface TeamTableProps {
-  fetchTeam(): void
   team: teamObj[]
 }
 
 export class TeamTable extends Component<TeamTableProps> {
-  componentDidMount() {
-    const { fetchTeam } = this.props
-    fetchTeam()
-  }
-
-  render() {
+  table = () => {
     return (
-      <div>
-        <div>table</div>
+      <div className='team-table'>
+        <div className='team-table__label-w'>
+          <div className='team-table__label-item'>Role</div>
+          <div className='team-table__label-item'>Name</div>
+        </div>
+        {this.tableItem()}
       </div>
     )
   }
-}
 
-const mapDispatchToProps = (dispatch: any) => ({
-  fetchTeam: () => dispatch(getTeam())
-})
+  tableItem = () => {
+    const { team } = this.props
+    return team.map((key) => {
+      return (
+        <div key={key.firstName} className='team-table__item-w'>
+          <div className='team-table__item-icon'>{teamRole(key.role)}</div>
+          <div>
+            <span className='team-table__item-name'>
+              {key.firstName} {key.lastName}
+            </span>
+          </div>
+        </div>
+      )
+    })
+  }
 
-const mapStateToProps = (state: any) => {
-  return {
-    team: state.team
+  render() {
+    return <>{this.table()}</>
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TeamTable)
+export default TeamTable

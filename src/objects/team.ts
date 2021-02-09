@@ -9,4 +9,11 @@ export interface teamObj {
   role: roleTypes
 }
 
-type roleTypes = 'FE' | 'BE' | 'FULL' | 'QA' | 'AUTOMATION'
+export type roleTypes =
+  | 'FE'
+  | 'BE'
+  | 'FULL'
+  | 'QA'
+  | 'AUTOMATION'
+  | 'SalesForce'
+  | 'TechLead'

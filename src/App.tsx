@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import DashBoard from './containers/Dashboard'
 import Tasks from './containers/Tasks'
-import { Team } from './containers/Team'
+import Team from './containers/Team'
 
 export default function App() {
   return (
