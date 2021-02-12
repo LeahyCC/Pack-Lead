@@ -5,18 +5,26 @@ export interface taskState {
 export interface taskObj {
   [key: string]: any
   id: number
-  status:
-    | 'open'
-    | 'in progress'
-    | 'dev testing'
-    | 'staging testing'
-    | 'ready for prod'
-    | 'blocked'
+  title: string
+  description: string
+  assignee: string
+  status: taskStatusType
+  workType: taskWorkType[]
   startDay: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
   endDay: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
-  assignee?: string
-  sprint?: string[]
-  title?: string
-  description?: string
-  dueDate?: Date
 }
+
+export type taskWorkType =
+  | 'FE'
+  | 'BE'
+  | 'QA'
+  | 'AUTOMATION'
+  | 'SalesForce'
+  | 'Spike'
+
+export type taskStatusType =
+  | 'open'
+  | 'in progress'
+  | 'dev complete'
+  | 'ready for prod'
+  | 'blocked'

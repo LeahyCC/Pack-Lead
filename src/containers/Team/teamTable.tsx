@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import teamRole from './teamRole'
 import { teamObj } from '../../objects/team'
+import ToolTip from '../../components/Tooltip'
 
 interface TeamTableProps {
   team: teamObj[]
@@ -24,7 +25,11 @@ export class TeamTable extends Component<TeamTableProps> {
     return team.map((key) => {
       return (
         <div key={key.firstName} className='team-table__item-w'>
-          <div className='team-table__item-icon'>{teamRole(key.role)}</div>
+          <div className='team-table__item-icon'>
+            <ToolTip position='bottom' text={key.role}>
+              {teamRole(key.role)}
+            </ToolTip>
+          </div>
           <div>
             <span className='team-table__item-name'>
               {key.firstName} {key.lastName}
