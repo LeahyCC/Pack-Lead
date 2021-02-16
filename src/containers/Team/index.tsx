@@ -21,7 +21,7 @@ export class Team extends Component<TeamProps> {
     return (
       <>
         <PageTitle title='Team' />
-        <TeamTable team={team} />
+        {team?.length && <TeamTable team={team} />}
       </>
     )
   }

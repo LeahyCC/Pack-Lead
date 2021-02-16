@@ -1,5 +1,5 @@
 import { taskObj } from '../../../objects/tasks'
-import isEmptyObj from '../../../helpers/objects'
+import { isEmptyObj } from '../../../helpers/objects'
 
 const mapTask = (taskPayload: taskObj) => {
   if (!isEmptyObj(taskPayload)) {

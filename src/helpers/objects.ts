@@ -1,6 +1,6 @@
 import isTypeObj from './types'
 
-const isEmptyObj = (obj: {}) => {
+export const isEmptyObj = (obj: {}) => {
   // truthiness if is type {}
   const isEmpty = obj && Object.keys(obj).length === 0
 
@@ -11,7 +11,17 @@ const isEmptyObj = (obj: {}) => {
       console.warn(`isEmptyObj({}: obj): is being passed ${obj}`)
 }
 
-// TODO:
-// const xx = { 0: ['2', { 0.0: {}, 0.1: undefined }], 1: { 2.0: true } }
-// for testing purposes
-export default isEmptyObj
+export const compareValues = (key: string, order = 'asc') => {
+  return function innerSort(a: any, b: any) {
+    const varA = typeof a[key] === 'string' ? a[key].toUpperCase() : a[key]
+    const varB = typeof b[key] === 'string' ? b[key].toUpperCase() : b[key]
+
+    let comparison = 0
+    if (varA > varB) {
+      comparison = 1
+    } else if (varA < varB) {
+      comparison = -1
+    }
+    return order === 'desc' ? comparison * -1 : comparison
+  }
+}

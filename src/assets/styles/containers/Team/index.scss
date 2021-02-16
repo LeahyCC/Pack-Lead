@@ -9,9 +9,23 @@
     }
 
     &-item {
+      display: flex;
+      align-items: center;
       font-size: 13px;
+      cursor: pointer;
+
       &:nth-of-type(2) {
-        margin-left: 20px;
+        margin-left: 10px;
+      }
+
+      &-icon {
+        margin-left: 5px;
+        transition: transform 300ms;
+        transform: rotate(0deg);
+
+        &--active {
+          transform: rotate(180deg);
+        }
       }
     }
   }
@@ -23,11 +37,20 @@
       padding: 16px;
       border-bottom: 1px solid #f0f2f6;
     }
+
     &-icon {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 26px;
+      margin-right: 31px;
+      width: 25px;
+    }
+
+    &-role {
+      display: block;
+      font-size: 12px;
+      margin-top: 3px;
+      color: #7d7d7d;
     }
   }
 }
